@@ -1,0 +1,49 @@
+﻿<Window x:Class="Oksana_Krasavica.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Oksana_Krasavica"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="SearchTB" Width="300" Margin="10" FontSize="20" TextChanged="SearchTB_TextChanged"></TextBox>
+            <ComboBox x:Name="SortCB" Width="200" Margin="10" SelectionChanged="SortCB_SelectionChanged">
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+            <TextBlock x:Name="RoleTB" Width="200" FontSize="30">Клиент</TextBlock>
+            <TextBox x:Name="PasswordTB" Width="200" FontSize="30" Visibility="Hidden"></TextBox>
+            <Button x:Name="ChekBTN" Width="200" FontSize="30" Visibility="Hidden" Click="ChekBTN_Click">Проверка</Button>
+        </StackPanel>
+        <ListView Grid.Row="1" x:Name="ToysList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Background="{Binding ColorBG}">
+                        <TextBlock Text="{Binding Name}" Width="200" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Description}" Width="600" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="{Binding Cost}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Weight}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Width}" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding Height}" Width="50"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel>
+                <Button x:Name="AdminBTN" Margin="10" Click="AdminBTN_Click" >Админ</Button>
+                <Button x:Name="ClientBTN" Margin="10" Click="ClientBTN_Click" >Клиент</Button>
+            </StackPanel>
+            <Button x:Name="AddBTN" Width="100" Margin="10" Click="AddBTN_Click" Visibility="Hidden">Добавить</Button>
+            <Button x:Name="EditBTN" Width="100" Margin="10" Click="EditBTN_Click" Visibility="Hidden">Редактировать</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+﻿<Application x:Class="Oksana_Krasavica.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Oksana_Krasavica"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Gabriola"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>
